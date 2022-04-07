@@ -14,12 +14,10 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
 
       element.style.display = "none";
       document.body.appendChild(element);
-
       element.click();
 
       document.body.removeChild(element);
     }
-
     const datas = document.getElementsByClassName("checkboxes");
     const newData = [];
     console.log(datas);
@@ -27,7 +25,7 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
     const needtext = "";
     for (i = 0; i < datas.length; i++) {
       if (datas[i].checked) {
-        const j = datas[i].value.replace("next", " ");
+        const j = datas[i].value.replace("next", "\t");
         console.log(typeof j);
         newData.push(j);
         console.log(typeof j[0]);
@@ -35,9 +33,9 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
         // needtext.concat(j[0] + " " + j[1] + "\n");
       }
     }
-    console.log(newData.join(" "));
-    let text =
-      "hi mom\tnew new many text\nhi mom\tnew new many text\nhi mom\tnew new many text\n";
+    console.log(newData.join("\n"));
+    let text = newData.join("\n");
+    ("hi mom\tnew new many text\nhi mom\tnew new many text\nhi mom\tnew new many text\n");
     let filename = "hello.txt";
     download(filename, text);
   };
