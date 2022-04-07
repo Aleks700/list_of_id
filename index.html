@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Plan Checker</title>
+
+    <link rel="stylesheet" href="css/foundation.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="row">
+        <div class="small-8 columns">
+          <span>This program was developed specificly for KazEOSat-2</span>
+        </div>
+        <div class="small-4 columns text-right">
+          <span
+            >author: <a href="mailto:k.bazaraly@gharysh.kz">k.bazaraly</a></span
+          >
+        </div>
+      </div>
+    </header>
+    <div class="row wrapper page-wrap">
+      <div class="large-12 columns">
+        <br />
+        <div id="header" class="row">
+          <div class="small-6 columns text-left">
+            <h3>
+              <img
+                src="img/MCPlogo42.png"
+                alt="sattelite logo"
+                height="42"
+                width="301"
+              />
+            </h3>
+            <!--<h3><img src="img/sattelite.png" alt="sattelite logo" height="42" width="42"> MCP SCRIPTS</h3>-->
+          </div>
+          <div class="small-6 columns text-right">
+            <h3>Plan Checker</h3>
+          </div>
+        </div>
+        <br />
+        <div class="row text-left">
+          <div class="medium-4 columns">
+            <p>Please, Choose the <b>XML</b>-file to count</p>
+            <input type="file" id="files" name="files[]" multiple />
+          </div>
+          <div class="medium-8 columns warning callout">
+            <p>
+              <i
+                ><b>Note:</b> this script can only count from one file and based
+                on assumption that the right <b>"zone"</b> is placed in as a
+                <b>first child</b> of <b>acquisitionStrip</b></i
+              >
+            </p>
+          </div>
+        </div>
+        <div class="row text-center">
+          <output id="errMsg"></output>
+
+          <output id="properties"></output>
+          <output id="result"></output>
+        </div>
+        <div class="row text-center">
+          <div class="large-11 large-offset-1 column">
+            <table
+              id="tableForStripsarea"
+              summary="The each stripes area"
+              class="responsive"
+            ></table>
+            <output id="calcSum"></output>
+            <br />
+          </div>
+        </div>
+        <br />
+      </div>
+      <div>
+        <button class="sendData" id="push">Click me</button>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="row">
+        <p class="text-center">
+          The script for calculating daily shooted area for MCP based on saved
+          xml
+        </p>
+        <div class="small-2 columns text-left">
+          <span>
+            Version<br />
+            Created<br />
+            Under the<br />
+          </span>
+        </div>
+        <div class="small-4 columns text-left">
+          <span>
+            0.4<br />
+            2016.9.21<br />
+            <a href="https://www.gnu.org/licenses/quick-guide-gplv3.en.html"
+              >GPLv3</a
+            ><br />
+          </span>
+        </div>
+        <div class="small-3 columns text-left">
+          <span>
+            Supported by<br />
+            Last modified<br />
+            Designed at<br />
+          </span>
+        </div>
+        <div class="small-3 columns text-left">
+          <span>
+            <a href="mailto:k.bazaraly@gharysh.kz">k.bazaraly@gharysh.kz</a
+            ><br />
+            2016.9.23<br />
+            © 2016 <a href="gharysh.kz">JSC KGS NC</a><br />
+          </span>
+        </div>
+      </div>
+      <p class="text-center">Enjoy and welcome!)</p>
+    </footer>
+
+    <script src="js/vendor/jquery.js"></script>
+    <!--<script src="js/vendor/what-input.js"></script>-->
+    <script src="js/vendor/foundation.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
