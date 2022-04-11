@@ -26,10 +26,18 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
     const needtext = "";
     for (i = 0; i < datas.length; i++) {
       if (datas[i].checked) {
-        const j = datas[i].value.replace("next", "\t");
-        console.log(typeof j);
-        newData.push(j);
-        console.log(typeof j[0]);
+        // const j = datas[i].value.replace("next", "\t");
+        const j = datas[i].value.split("next");
+        // const j = datas[i].value.split("next");
+        // console.log(typeof j[1]);
+        if (j[1] == "null") {
+          newData.push(j[0] + "\t" + j[2] + " " + j[3]);
+          // console.log("where was null", j[2] + j[3]);
+        } else {
+          newData.push(j[0] + "\t" + j[1]);
+        }
+
+        // console.log(typeof j[0]);
         // needtext = needtext + j[0];
         // needtext.concat(j[0] + " " + j[1] + "\n");
       }
@@ -134,7 +142,13 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
                 tableForStripsarea +=
                   `<tr ><td>` +
                   `<input type='checkbox'  class='checkboxes'  value=${
-                    strips[i].getAttribute("requestName") + "next" + stripName
+                    strips[i].getAttribute("requestName") +
+                    "next" +
+                    stripName +
+                    "next" +
+                    zone.firstElementChild.getAttribute("latitude") +
+                    "next" +
+                    zone.firstElementChild.getAttribute("longitude")
                   } id='s${i + 1}'></input>` +
                   "</td><td>" +
                   (i + 1) +
