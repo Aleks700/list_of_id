@@ -1,6 +1,7 @@
 $(document).foundation();
 
 if (window.File && window.FileReader && window.FileList && window.Blob) {
+  let globalXMLName = "";
   const getDatas = () => {
     function download(filename, text) {
       var element = document.createElement("a");
@@ -37,7 +38,9 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
     let text = newData.join("\n");
     ("hi mom\tnew new many text\nhi mom\tnew new many text\nhi mom\tnew new many text\n");
     let filename = "hello.txt";
-    download(filename, text);
+    // let a = fileReq.split(".");
+    // console.log("its a ", globalXMLName[0]);
+    download(globalXMLName[0], text);
   };
   document.getElementById("push").addEventListener("click", getDatas);
   // Great success! All the File APIs are supported.
@@ -74,7 +77,7 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
         //     	document.getElementById('properties').innerHTML = '<ul>' + output.join('') + '</ul>';
 
         var fileReq = f.name; // + "<small>(created" + f.lastModifiedDate.toLocaleDateString() +")</small>";
-
+        globalXMLName = fileReq.split(".");
         var reader = new FileReader();
         // Closure to capture the file information.
         reader.onload = (function (theFile) {
@@ -157,7 +160,7 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
               // document.getElementById(
               //   "push"
               // ).innerHTML = `<button class="sendData" >Click me</button>`;
-
+              console.log("Needed filename", fileReq);
               document.getElementById("result").innerHTML =
                 "<br/><h3>Total area for <b>" +
                 fileReq +
