@@ -31,7 +31,7 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
         // const j = datas[i].value.split("next");
         // console.log(typeof j[1]);
         if (j[1] == "null") {
-          newData.push(j[0] + "\t" + j[2] + " " + j[3]);
+          newData.push(j[0] + "\t" + j[2] + "\t" + j[3]);
           // console.log("where was null", j[2] + j[3]);
         } else {
           newData.push(j[0] + "\t" + j[1]);
